@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+
+.hero-section {
+    height: 300px;
+
+    img {
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+        z-index: -1;
+    }
+
+    &-title {
+        color: $white-color;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        font-weight: 800;
+        text-align: center;
+        line-height: 3.8rem;
+    }
+
+    &-links {
+        color: $white-color;
+        font-size: clamp(1.4rem, 3vw, 1.6rem);
+        font-weight: 500;
+        line-height: 2.4rem;
+    }
+
+    &-disabled {
+        color: $yellow-color;
+    }
+}

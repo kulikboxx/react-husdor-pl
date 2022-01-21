@@ -1,0 +1,205 @@
+@import '../../styles//variables';
+
+.slider {
+    min-height: 500px;
+    height: calc(100vh - 98.58px);
+    max-height: 640px;
+
+    .swiper-slide {
+        position: relative;
+
+        &.swiper-slide-active {
+            z-index: 1;
+
+            .slider-suptitle {
+                animation: fadeInUp 0.5s 0.25s forwards;
+            }
+
+            .slider-title {
+                animation: fadeInUp 0.8s 0.5s forwards;
+            }
+
+            .slider-content-buttons {
+                animation: fadeInUp 0.8s 0.8s forwards;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: $white-color;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 0 1em;
+            max-width: 1200px;
+            height: 100%;
+        }
+
+        &-buttons {
+            transform: translateY(150%);
+            opacity: 0;
+            transition: opacity 0.8s, transform 0.8s;
+        }
+    }
+
+    &-suptitle {
+        display: flex;
+        align-items: center;
+        margin-bottom: clamp(2rem, 6vw, 6rem);
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        line-height: 7rem;
+        text-transform: uppercase;
+        transform: translateY(50%);
+        opacity: 0;
+        transition: opacity 0.4s, transform 0.4s;
+
+        &::after {
+            content: '';
+            margin-left: 3rem;
+            width: 100px;
+            height: 3px;
+            background-color: $white-color;
+        }
+    }
+
+    &-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: clamp(5rem, 8vw, 7rem);
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: clamp(2.5rem, 7vw, 3.5rem);
+        transform: translateY(100%);
+        opacity: 0;
+        transition: opacity 0.8s, transform 0.8s;
+
+        &::before {
+            content: '';
+            margin-right: 2rem;
+            width: 40px;
+            height: 3px;
+            background-color: $white-color;
+        }
+    }
+
+    .swiper-button {
+
+        &-prev,
+        &-next {
+            display: none;
+        }
+    }
+
+    .swiper-pagination {
+        &-bullet {
+            margin: 0 0.7rem !important;
+            width: 12px;
+            height: 12px;
+            background-color: $white-color;
+            border-radius: 0;
+            opacity: 1;
+
+            &-active {
+                background-color: $yellow-color;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .slider {
+        height: calc(100vh - 102.91px);
+    }
+}
+
+@media (min-width: 992px) {
+    .slider {
+        height: calc(100vh - 128.88px);
+
+        &-content {
+            &-wrapper {
+                padding: 0 5rem;
+            }
+        }
+
+        .swiper-button {
+
+            &-prev,
+            &-next {
+                display: block;
+                z-index: 10;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &-prev,
+            &-next {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                background-color: rgba(255, 255, 255, 0.5);
+
+                &::before {
+                    content: '\f0d9';
+                    color: $black-color;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    font-size: 2.4rem;
+                }
+            }
+
+            &-prev {
+                left: 0;
+            }
+
+            &-next {
+                right: 0;
+
+                &::before {
+                    content: '\f0da';
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+    .slider {
+        &-content {
+            &-wrapper {
+                padding: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@import '../../styles/variables';
+
+.aboutus {
+    &-image {
+        margin-bottom: 1rem;
+
+        &-first,
+        &-second {
+            margin: 0 auto;
+            max-width: 400px;
+            height: auto;
+            min-height: 550px;
+            overflow: hidden;
+
+            img {
+                width: auto;
+                height: 100%;
+                object-fit: cover;
+                max-height: 600px;
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) {
+    .aboutus {
+        &-image {
+
+            &-first,
+            &-second {
+                width: 70%;
+                max-width: 550px;
+            }
+
+            &-first {
+                margin: 0 auto 0 0;
+            }
+
+            &-second {
+                margin: -60% 0 0 30%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .aboutus {
+        &-image {
+            margin: 0 auto 1rem;
+            width: max-content !important;
+            min-width: 90%;
+
+            &-first,
+            &-second {
+                width: 50%;
+                max-width: 400px;
+            }
+
+            &-first {
+                margin: 0 auto 0 15%;
+            }
+
+            &-second {
+                margin: -50% 0 0 40%;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .aboutus {
+        &-image {
+            margin: 0;
+            min-width: 50%;
+            max-width: 50%;
+
+            &-first,
+            &-second {
+                width: 75%;
+            }
+
+            &-first {
+                margin: 0 auto 0 0;
+            }
+
+            &-second {
+                margin: -60% 0 0 22%;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.catalog {
+    &-image {
+        width: 100%;
+        height: calc(100% - 40px);
+        object-fit: cover;
+    }
+
+    &-button {
+        margin-top: -5px;
+        text-transform: none !important;
+
+        i {
+            font-size: 2rem !important;
+        }
+
+        &:focus {
+            border: none !important;
+            outline: none !important;
+        }
+    }
+}

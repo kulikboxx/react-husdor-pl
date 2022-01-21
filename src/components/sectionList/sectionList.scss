@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.section-list {
+    margin-bottom: 2rem;
+    color: $description-color;
+    font-size: clamp(1.4rem, 4vw, 1.6rem);
+    font-weight: 500;
+    line-height: 2.5rem;
+
+    i {
+        margin-right: 1.5rem;
+        color: $black-color;
+    }
+}

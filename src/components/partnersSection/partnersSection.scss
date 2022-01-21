@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.partners {
+    &-supertitle {
+        margin: 0 auto 3rem !important;
+        width: max-content;
+        color: $yellow-color;
+
+        &::before {
+            background-color: $yellow-color !important;
+        }
+    }
+
+    &-carousel {
+        max-height: 120px;
+        overflow: hidden;
+
+        .swiper {
+            &-slide {
+                background-color: $white-color;
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+                    width: auto;
+                    max-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}

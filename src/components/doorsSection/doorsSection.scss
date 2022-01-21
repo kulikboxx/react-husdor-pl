@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.doors {
+
+    &-supertitle,
+    &-title {
+        width: max-content !important;
+    }
+}

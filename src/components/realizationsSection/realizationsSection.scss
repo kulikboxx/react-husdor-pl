@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+
+.realizations {
+    &-item {
+        cursor: pointer;
+        overflow: hidden;
+        user-select: none;
+
+        img {
+            width: 103%;
+            height: 103%;
+            object-fit: cover;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 50%;
+            height: 10%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.75);
+            transition: height 0.5s, top 0.5s, transform 0.5s, opacity 0.5s;
+            transform-origin: center;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        &::after {
+            content: '\f0fe';
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, 65%);
+            font-size: 3.4rem;
+            font-family: 'Font Awesome 5 Free';
+            background-color: $yellow-color;
+            opacity: 0;
+            transition: opacity 0.5s, transform 0.5s;
+            z-index: 0;
+        }
+
+        &:hover {
+            &::before {
+                top: 0;
+                height: 100%;
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            &::after {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.lightbox {
+    &-modal {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 100;
+    }
+
+    &-buttons {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+    }
+
+    &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.5s;
+        cursor: pointer;
+
+        i {
+            color: $black-color;
+            font-size: 2.2rem;
+        }
+    }
+
+    &-dialog {
+        margin-top: 3.5rem;
+        width: auto;
+        max-width: 95vw;
+        height: 100%;
+        max-height: 90vh;
+        user-select: none;
+    }
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

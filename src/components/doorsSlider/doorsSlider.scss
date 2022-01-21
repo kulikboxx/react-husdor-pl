@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+
+.profile-doors-slider {
+    position: relative;
+    padding-bottom: 3.5rem;
+
+    .swiper {
+
+        &-slide {
+            margin: 0;
+            padding: 0;
+            cursor: grab;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        &-button {
+
+            &-prev,
+            &-next {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                top: 99%;
+                width: 30px;
+                height: 30px;
+                background-color: rgba(0, 0, 0, 0.25);
+
+                &::before {
+                    content: '\f0d9';
+                    color: $black-color;
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: 900;
+                    font-size: 2.4rem;
+                }
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            &-prev {
+                left: calc(47% - 30px);
+            }
+
+            &-next {
+                right: calc(47% - 30px);
+
+                &::before {
+                    transform: rotateZ(180deg);
+                }
+            }
+        }
+    }
+}

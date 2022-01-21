@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.consent {
+    &-popup {
+        transition: transform 1s;
+        transform: translateY(300%);
+        z-index: 15;
+
+        &.show {
+            transform: translateY(0);
+        }
+    }
+
+    &-wrapper {
+        max-width: 550px;
+        line-height: 1.5;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        .button {
+            font-size: 1.4rem;
+        }
+    }
+}

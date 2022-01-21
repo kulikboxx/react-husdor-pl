@@ -1,0 +1,141 @@
+@import '../../styles/variables';
+
+.footer {
+    padding: 5rem 1rem 0 1rem;
+
+    &-logo {
+        margin-bottom: 4.5rem;
+        width: 220px;
+        z-index: 20;
+    }
+
+    .section-content {
+        p {
+            color: $white-color !important;
+            font-size: 1.4rem;
+        }
+    }
+
+    &-title {
+        margin-bottom: 4.5rem;
+        font-size: 2.4rem;
+        font-weight: 800;
+        line-height: 2rem;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: $white-color;
+        }
+    }
+
+    ul {
+        li {
+
+            .link,
+            a,
+            p {
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 0;
+                max-width: max-content;
+                color: $white-color;
+                font-size: 1.4rem;
+                transition: color 0.5s;
+
+                &::before {
+                    content: "";
+                    margin-right: 1rem;
+                    width: 10px;
+                    height: 2px;
+                    background-color: $white-color;
+                    transition: background-color 0.5s;
+                }
+
+                &:hover {
+                    color: $yellow-color !important;
+
+                    &::before {
+                        background-color: $yellow-color;
+                    }
+                }
+            }
+        }
+    }
+
+    &-social-list,
+    &-contact-list,
+    &-bottom-list {
+        li {
+
+            .link,
+            a,
+            p {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-social-list,
+    &-contact-list {
+        li {
+
+            .link,
+            a,
+            p {
+
+                .fab,
+                .fas {
+                    font-size: 2.4rem;
+                }
+
+                .fas {
+                    margin-right: 1.2rem;
+                    width: 24px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &-contact-list {
+        li {
+            margin-bottom: 0.2rem;
+        }
+    }
+
+    &-bottom-list {
+        padding: 1.6rem 0;
+
+        li {
+            font-size: 1.2rem;
+
+            a {
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        &-logo {
+            width: 300px;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .footer {
+        .col-12:not(:first-of-type) {
+            margin-top: 7rem;
+        }
+    }
+}
